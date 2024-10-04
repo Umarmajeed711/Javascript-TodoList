@@ -13,14 +13,14 @@
     
 </head>
 <body>
-    <div class="container mt-3 d-flex justify-content-center  flex-column body">
-        <div class="mt-5 d-flex justify-content-around flex-wrap flex-column   align-content-center">
+    <div class="container mt-3 d-flex justify-content-center  flex-column">
+        <div class="mt-5 d-flex justify-content-around flex-wrap flex-column align-content-center">
             <h1>TOdo LiSt</h1>
-           <p> <input type="text" id="input1" required placeholder="enter list item" class="mt-1"></p>
-           <div class="d-flex justify-content-around">
+           <p> <input type="text" id="input1" placeholder="enter list item" required class="mt-1"></p>
+           <div class="d-flex justify-content-around" style="display: flex;gap: 10px;">
             <p><input type="submit" class="btn btn-success" onclick="add()" value="Add Task"></p>
-            <p><input type="submit" class="btn btn-danger" onclick="remove()" value="Remove"></p>
-            <p><input type="reset" class="btn btn-danger" onclick="remove()" value="Reset"></p>
+            <p><input type="submit" class="btn btn-warning" onclick="remove()" value="Remove"></p>
+            <!-- <p><input type="reset" class="btn btn-danger"  value="Reset"></p> -->
 
         </div>
         </div>
