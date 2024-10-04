@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-list</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container mt-3 d-flex justify-content-center  flex-column body">
+        <div class="mt-5 d-flex justify-content-around flex-wrap flex-column   align-content-center">
+            <h1>TOdo LiSt</h1>
+           <p> <input type="text" id="input1" placeholder="enter list item" class="mt-1"></p>
+           <div class="d-flex justify-content-around">
+            <p><input type="submit" class="btn btn-success" onclick="add()" value="Add"></p>
+            <p><input type="submit" class="btn btn-danger" onclick="remove()" value="remove"></p>
+        </div>
+        </div>
+
+
+        <!-- Result div -->
+        <div class="d-flex justify-content-center">
+        <div class="mt-3 p-3 result">
+            <ol id="list">
+                 
+            </ol>
+
+        </div>
+       </div>
+
+    </div>
+
+    <script>
+         let todolist = [];
+        //  let result;
+        function add(){
+            let input1 = document.getElementById("input1").value 
+            todolist.push(input1);
+
+            printList();
+
+            document.getElementById("input1").value = "";
+
+        } 
+        function remove(){
+            todolist.pop()
+    
+            // document.getElementById("list").innerHTML = `${todolist + "\n"}`;
+            printList()
+            
+            
+        }
+ 
+        function printList(){
+            let lisData = "";
+            for(let i=0 ; i < todolist.length ; i++) {
+                lisData += `<li>${todolist[i]}</li>`
+            }
+
+            document.getElementById("list").innerHTML = lisData;
+        }
+    </script>
+    
+</body>
+</html>
