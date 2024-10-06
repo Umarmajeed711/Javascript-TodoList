@@ -15,13 +15,13 @@
 <body>
     <div class="container mt-3 d-flex justify-content-center  flex-column">
         <div class="mt-5 d-flex justify-content-around flex-wrap flex-column align-content-center">
+            <form onsubmit="add(); return false">
             <h1>TOdo LiSt</h1>
-           <p> <input type="text" id="input1" placeholder="enter list item" required class="mt-1"></p>
+           <p><input type="text" id="input1" placeholder="enter list item" required class="mt-1"></p>
            <div class="d-flex justify-content-around" style="display: flex;gap: 10px;">
-            <p><input type="submit" class="btn btn-success" onclick="add()" value="Add Task"></p>
+            <p><input type="submit" class="btn btn-success" value="Add Task"></p>
             <p><input type="submit" class="btn btn-warning" onclick="remove()" value="Remove"></p>
-            <!-- <p><input type="reset" class="btn btn-danger"  value="Reset"></p> -->
-
+        </form>
         </div>
         </div>
 
@@ -40,7 +40,8 @@
 
     <script>
          let todolist = [];
-        //  let result;
+
+
         function add(){
             let input1 = document.getElementById("input1").value 
             todolist.push(input1);
@@ -49,24 +50,32 @@
 
             document.getElementById("input1").value = "";
 
-        } 
+        }
+    
         function remove(){
             todolist.pop()
     
-            // document.getElementById("list").innerHTML = `${todolist + "\n"}`;
             printList()
             
             
         }
  
+
+       
         function printList(){
+           
             let lisData = "";
             for(let i=0 ; i < todolist.length ; i++) {
-                lisData += `<li>${todolist[i]}</li>`
+
+                   lisData += `<li>${todolist[i]}</li>`
+                
             }
 
             document.getElementById("list").innerHTML = lisData;
         }
+
+
+    
     </script>
     
 </body>
